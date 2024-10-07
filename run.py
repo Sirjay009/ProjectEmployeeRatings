@@ -79,6 +79,9 @@ def update_worksheet_with_employee_ratings(data):
 
 
 def main():
+    """
+    Run all program functions
+    """
     data = get_scores_data()
     # print(data)
     scores_data = [int(num) for num in data]
