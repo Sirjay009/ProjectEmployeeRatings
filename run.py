@@ -78,8 +78,13 @@ def update_worksheet_with_employee_ratings(data):
     print("Score ratings updated successfully.\n")
 
 
-data = get_scores_data()
-#print(data)
-scores_data = [int(num) for num in data]
-#print(scores_data)
-update_worksheet_with_employee_ratings(data)
+def main():
+    data = get_scores_data()
+    # print(data)
+    scores_data = [int(num) for num in data]
+    # print(scores_data)
+    update_worksheet_with_employee_ratings(data)
+
+
+print("Welcome to project_employee_ratings Data Automation")
+main()
