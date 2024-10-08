@@ -98,6 +98,19 @@ def get_and_convert_column_to_integers(employee_survey_data, column_index):
     return int_column_scores
 
 
+def calculate_and_update_average_score_ratings(values):
+    """
+    Calculate the average rating for each column of
+    the employee_survey_data.
+    """
+    print("Calculating average score rating...\n")
+    total_column_sum = sum(values)
+    entries = len(values)
+    average = int(total_column_sum / entries)
+
+    return total_column_sum, average
+
+
 def main():
     """
     Run all program functions
@@ -108,6 +121,13 @@ def main():
     column_a = get_and_convert_column_to_integers("employee_survey_data", 1)
     column_b = get_and_convert_column_to_integers("employee_survey_data", 2)
     column_c = get_and_convert_column_to_integers("employee_survey_data", 3)
+    sum_a, avg_a = calculate_and_update_average_score_ratings(column_a)
+    sum_b, avg_b = calculate_and_update_average_score_ratings(column_b)
+    sum_c, avg_c = calculate_and_update_average_score_ratings(column_c)
+
+    print(f"Employee Satisfaction - Sum: {sum_a}, Average: {avg_a}")
+    print(f"Job Satisfaction - Sum: {sum_b}, Average: {avg_b}")
+    print(f"Work-Life Balance - Sum: {sum_c}, Average: {avg_c}")
 
 
 print("Welcome to project_employee_ratings Data Automation")
