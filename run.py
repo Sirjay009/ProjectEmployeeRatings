@@ -50,6 +50,7 @@ def validate_data(values):
     """
     # print(values)
     try:
+        [int(value) for value in values]
         if len(values) != 3:
             raise ValueError(
                 f"Exactly 3 values required, you provided {len(values)}"
@@ -74,8 +75,27 @@ def update_worksheet_with_employee_ratings(data):
     """
     print("Updating employee_survery_data worksheet...\n")
     scores_worksheet = SHEET.worksheet("employee_survey_data")
-    scores_worksheet.append_row(data)
+    scores_worksheet.append_row([int(num) for num in data])
     print("Score ratings updated successfully.\n")
+
+
+def get_and_convert_column_to_integers(employee_survey_data, column_index):
+    """
+    Pull values from a specified column in the worksheet
+    and convert them to integers.
+    """
+    scores_data = SHEET.worksheet(employee_survey_data)
+    column_scores = scores_data.col_values(column_index)
+
+    try:
+        int_column_scores = [
+            int(value) for value in column_scores if value.isdigit()
+        ]
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+
+    return int_column_scores
 
 
 def main():
@@ -84,9 +104,10 @@ def main():
     """
     data = get_scores_data()
     # print(data)
-    scores_data = [int(num) for num in data]
-    # print(scores_data)
     update_worksheet_with_employee_ratings(data)
+    column_a = get_and_convert_column_to_integers("employee_survey_data", 1)
+    column_b = get_and_convert_column_to_integers("employee_survey_data", 2)
+    column_c = get_and_convert_column_to_integers("employee_survey_data", 3)
 
 
 print("Welcome to project_employee_ratings Data Automation")
