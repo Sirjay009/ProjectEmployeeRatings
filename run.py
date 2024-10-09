@@ -45,8 +45,10 @@ def get_scores_data():
 def validate_data(values):
     """
     Use 'try/except and for loop statements to check if data is valid.
+    Convert string values to intergers.
     Raise ValueError if strings cannot be converted into
-    integers, if there are not exactly 3 values or if out of 0 and 5 range.
+    integers, if there are not exactly 3 values or if values
+    are out of the range of 0 and 5.
     """
     # print(values)
     try:
@@ -75,7 +77,7 @@ def update_worksheet_with_employee_ratings(data):
     """
     print("Updating employee_survery_data worksheet...\n")
     scores_worksheet = SHEET.worksheet("employee_survey_data")
-    scores_worksheet.append_row([int(num) for num in data])
+    scores_worksheet.insert_row([int(num) for num in data], 2)
     print("Score ratings updated successfully.\n")
 
 
@@ -106,7 +108,7 @@ def calculate_and_update_average_score_ratings(values):
     print("Calculating average score rating...\n")
     total_column_sum = sum(values)
     entries = len(values)
-    average = int(total_column_sum / entries)
+    average = round(total_column_sum / entries, 3)
 
     return total_column_sum, average
 
@@ -124,6 +126,8 @@ def main():
     sum_a, avg_a = calculate_and_update_average_score_ratings(column_a)
     sum_b, avg_b = calculate_and_update_average_score_ratings(column_b)
     sum_c, avg_c = calculate_and_update_average_score_ratings(column_c)
+    scores_worksheet = SHEET.worksheet("employee_survey_data")
+    scores_worksheet.append_row([avg_a, avg_b, avg_c], insert_data_option=OVERWRITE)
 
     print(f"Employee Satisfaction - Sum: {sum_a}, Average: {avg_a}")
     print(f"Job Satisfaction - Sum: {sum_b}, Average: {avg_b}")
