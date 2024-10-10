@@ -72,7 +72,7 @@ def validate_data(values):
 
 def update_worksheet_with_employee_ratings(data):
     """
-    Update employee_survey_data worksheet, add new row with 
+    Update employee_survey_data worksheet, add new row with
     the list data provided.
     """
     print("Updating employee_survery_data worksheet...\n")
@@ -115,21 +115,23 @@ def calculate_and_update_average_score_ratings(values, column_name):
 
 def edit_rows(employee_survey_data, row_number):
     """
-    Add an edit feature that enables users edit inputted values.
+    Add an edit feature that enables users edit data in a
+    specified row while ensuring the first row (title row)
+    is not edited.
     """
-    try:
-        sheet = SHEET.worksheet(employee_survey_data)
-        print(f"Editing row {row_number}...")
-        new_data = input("Please enter new data (e.g., 2,3,4): ").split(",")
+    if row_number <= 1:
+        print("You can't edit title row.")
+        return
 
-        if validate_data(new_data):
-            sheet.update([new_data])
-            print(f"Row {row_number} updated successfully.")
-        else:
-            print("Invalid data. Row update failed.")
+    scores_worksheet = SHEET.worksheet(employee_survey_data)
+    print(f"Editing row {row_number}...")
+    new_data = input("Please enter new data (e.g., 2,3,4): ").split(",")
 
-    except Exception as e:
-        print(f"Error: {e}")
+    if validate_data(new_data):
+        scores_worksheet.update([new_data])
+        print(f"Row {row_number} updated successfully.")
+    else:
+        print("Invalid data. Row update failed.")
 
 
 def delete_rows(employee_survey_data, row_number):
@@ -137,13 +139,13 @@ def delete_rows(employee_survey_data, row_number):
     Add a delete feature that gives users the option to
     deleted inputted values before editing.
     """
-    try:
-        sheet = SHEET.worksheet(employee_survey_data)
-        sheet.delete_rows(row_number)
-        print(f"Row {row_number} deleted successfully.")
-    except Exception as e:
-        print(f"Error: {e}")
+    if row_number <= 1:
+        print("You can't edit title row.")
+        return
 
+    scores_worksheet = SHEET.worksheet(employee_survey_data)
+    scores_worksheet.delete_rows(row_number)
+    print(f"Row {row_number} deleted successfully.")
 
 def manage_data():
     """
