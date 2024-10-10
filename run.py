@@ -114,6 +114,9 @@ def calculate_and_update_average_score_ratings(values, column_name):
 
 
 def edit_rows(employee_survey_data, row_number):
+    """
+    Add an edit feature that enables users edit inputted values.
+    """
     try:
         sheet = SHEET.worksheet(employee_survey_data)
         print(f"Editing row {row_number}...")
@@ -130,6 +133,10 @@ def edit_rows(employee_survey_data, row_number):
 
 
 def delete_rows(employee_survey_data, row_number):
+    """
+    Add a delete feature that gives users the option to
+    deleted inputted values before editing.
+    """
     try:
         sheet = SHEET.worksheet(employee_survey_data)
         sheet.delete_rows(row_number)
