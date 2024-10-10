@@ -100,12 +100,12 @@ def get_and_convert_column_to_integers(employee_survey_data, column_index):
     return int_column_scores
 
 
-def calculate_and_update_average_score_ratings(values):
+def calculate_and_update_average_score_ratings(values, column_name):
     """
     Calculate the average rating for each column of
     the employee_survey_data.
     """
-    print("Calculating average score rating...\n")
+    print(f"Calculating {column_name} score rating...\n")
     total_column_sum = sum(values)
     entries = len(values)
     average = round(total_column_sum / entries, 3)
@@ -123,9 +123,9 @@ def main():
     column_a = get_and_convert_column_to_integers("employee_survey_data", 1)
     column_b = get_and_convert_column_to_integers("employee_survey_data", 2)
     column_c = get_and_convert_column_to_integers("employee_survey_data", 3)
-    sum_a, avg_a = calculate_and_update_average_score_ratings(column_a)
-    sum_b, avg_b = calculate_and_update_average_score_ratings(column_b)
-    sum_c, avg_c = calculate_and_update_average_score_ratings(column_c)
+    sum_a, avg_a = calculate_and_update_average_score_ratings(column_a, "Environment Satisfaction")
+    sum_b, avg_b = calculate_and_update_average_score_ratings(column_b, "Job Satisfaction")
+    sum_c, avg_c = calculate_and_update_average_score_ratings(column_c, "Work-Life Balance")
     scores_worksheet = SHEET.worksheet("employee_survey_data")
     scores_worksheet.append_row([avg_a, avg_b, avg_c], insert_data_option=OVERWRITE)
 
