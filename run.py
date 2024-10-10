@@ -137,7 +137,8 @@ def edit_rows(employee_survey_data, row_number):
 def delete_rows(employee_survey_data, row_number):
     """
     Add a delete feature that gives users the option to
-    deleted inputted values before editing.
+    deleted inputted values before editing while
+    ensuring the first row (title row) is not deleted.
     """
     if row_number <= 1:
         print("You can't edit title row.")
@@ -147,9 +148,12 @@ def delete_rows(employee_survey_data, row_number):
     scores_worksheet.delete_rows(row_number)
     print(f"Row {row_number} deleted successfully.")
 
+
 def manage_data():
     """
     Update inputed data values by either editing or deleting same.
+    Keep asking for valid input until 'edit' or 'delete' is
+    entered.
     """
     while True:
         print("Would you like to edit or delete a row?")
@@ -172,10 +176,10 @@ def manage_data():
                     input("Enter the row number you wish to delete: "))
                 delete_rows("employee_survey_data", row_number)
             except ValueError:
-                print("Invalid row number. Please enter a valid number.")
+                print("Invalid row number. Please enter a valid.")
 
         else:
-            print("Invalid choice. Please enter 'edit' or 'delete.")
+            print("Invalid choice. Please enter 'edit' or 'delete.\n")
 
 
 def main():
@@ -201,7 +205,22 @@ def main():
     print(f"Job Satisfaction - Sum: {sum_b}, Average: {avg_b}")
     print(f"Work-Life Balance - Sum: {sum_c}, Average: {avg_c}")
 
-    manage_data()
+    """
+    Ask user if they want to edit or delete data
+    """
+    while True:
+        user_choice = input(
+            "Do you want to edit or delete any row? (yes/no): "
+        ).strip().lower()
+
+        if user_choice == "yes":
+            manage_data()
+            break
+        elif user_choice == "no":
+            print("Program completed. Exiting...")
+            break
+    else:
+        print("Invalid input. Please enter 'yes' or 'no'.")
 
 
 print("Welcome to project_employee_ratings Data Automation")
