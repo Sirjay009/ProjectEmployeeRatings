@@ -123,11 +123,14 @@ def main():
     column_a = get_and_convert_column_to_integers("employee_survey_data", 1)
     column_b = get_and_convert_column_to_integers("employee_survey_data", 2)
     column_c = get_and_convert_column_to_integers("employee_survey_data", 3)
-    sum_a, avg_a = calculate_and_update_average_score_ratings(column_a, "Environment Satisfaction")
-    sum_b, avg_b = calculate_and_update_average_score_ratings(column_b, "Job Satisfaction")
-    sum_c, avg_c = calculate_and_update_average_score_ratings(column_c, "Work-Life Balance")
+    sum_a, avg_a = calculate_and_update_average_score_ratings(
+        column_a, "Environment Satisfaction")
+    sum_b, avg_b = calculate_and_update_average_score_ratings(
+        column_b, "Job Satisfaction")
+    sum_c, avg_c = calculate_and_update_average_score_ratings(
+        column_c, "Work-Life Balance")
     scores_worksheet = SHEET.worksheet("employee_survey_data")
-    scores_worksheet.append_row([avg_a, avg_b, avg_c], insert_data_option=OVERWRITE)
+    scores_worksheet.append_row([avg_a, avg_b, avg_c])
 
     print(f"Employee Satisfaction - Sum: {sum_a}, Average: {avg_a}")
     print(f"Job Satisfaction - Sum: {sum_b}, Average: {avg_b}")
