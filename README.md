@@ -28,7 +28,7 @@
 
 <h3>Parse and Analyse the Data</h3>
 <ul>
-<li>I utilized four (4) functions to achieve this goal. The first collect data from users, the second validates the collected data, the third extracts/gets inputted data from each subject column and the last function calculates and updates the columns with the calculated averages.</li>
+<li>I utilized four (4) functions to achieve this goal. The first collects data from users, the second validates the collected data, the third extracts/gets inputted data from each subject column and the last function calculates and updates the columns with the calculated averages.</li>
 </ul>
 <br>
 
@@ -41,106 +41,69 @@
 <h2>Technology Used</h2>
 <P><strong>Python</strong></P>
 <ul>
-<li>The project is a entirely backend in nature hence my use of Python technology in writing the program.</li>
+<li>Python programming language is the sole technology used to accomplish this project.</li>
 </ul>
 <br>
 
 <h3>Testing</h3>
-<p>I manually tested this project to determine site usability, responsiveness and intuitivity to new users, by self and with the help of a few friends.</p>
+<p>I manually tested this program to determine it's usability and intuitivity to users by self.</p>
 <br>
 
-<h4>Testing phase</h4>
-<br>
-<h5>Testing for links and form</h5>
+<h5>Testing for data input</h5>
 <table>
 <tr>
     <th>Test</th>
     <th>Outcome</th>
   </tr>
    <tr>
-    <td>All links on Navigation lead to their correct pages</td>
+    <td>Are users able to input their ratings data for each subject of the survey?</td>
     <td>Pass</td>
   </tr>
   <tr>
-    <td>Reserve button lead to contact form on contact us page</td>
-    <td>Pass</td>
-  </tr>
-  <tr>
-    <td>Footer social media links all lead to their respective social media sites</td>
-    <td>Pass</td>
-  </tr>
-  <tr>
-    <td>Contact form submits when all criteria is filled correctly</td>
-    <td>Pass</td>
-  </tr>
-  <tr>
-    <td>User prevented from submitting form without correct elements</td>
-    <td>Pass</td>
-  </tr>
-  <tr>
-    <td>Form validation presents when incorrect input type is entered</td>
+    <td>Are inputted data values added in the second row of the worksheet?</td>
     <td>Pass</td>
   </tr>
 </table>
 <br>
 
-<h5>Testing for responsiveness</h5>
+<h5>Testing for data validation</h5>
 <table>
 <tr>
     <th>Test</th>
     <th>Outcome</th>
   </tr>
    <tr>
-    <td>Home page, about us, portfolio, contact us display correctly on screens larger than 950px</td>
+    <td>Are string values converted to integers?</td>
     <td>Pass</td>
   </tr>
   <tr>
-    <td>Home page, about us, portfolio, contact us display correctly on screens smaller than 950px</td>
+    <td>Are inputted data values exactly three (3)?</td>
+    <td>Pass</td>
+  </tr>
+  <tr>
+    <td>Are inputted data values within the range of 0 and 5?</td>
     <td>Pass</td>
   </tr>
 </table>
 <br>
 
-<h4>User testing</h4>
-<br>
-<h5>User testing challenge</h5>
-<p>5 users were tasked prior to visiting the web page to conduct under-stated basic testing and report on success or otherwise.</p>
-<br>
+<h5>Testing for data parsing and analysis</h5>
 <table>
 <tr>
     <th>Test</th>
-    <th>Result</th>
+    <th>Outcome</th>
   </tr>
    <tr>
-    <td>Upon arrival to website please navigate to where you would expect to find a contact form</td>
-    <td>100%</td>
+    <td>Is the program able to extract data values from the spreadsheet?</td>
+    <td>Pass</td>
   </tr>
   <tr>
-    <td>Please navigate to the social media links of this business</td>
-    <td>100%</td>
+    <td>Is the program able to analyse and calculate averages with extracted data values?</td>
+    <td>Pass</td>
   </tr>
   <tr>
-    <td>Please fill in contact form with your information and car category preference throught the reserve button</td>
-    <td>100%</td>
-  </tr>
-  <tr>
-    <td>Please navigate to the Portfolio page and count how many images there are</td>
-    <td>100%</td>
-  </tr>
-</table>
-<br>
-
-<h5>User responsive testing</h5>
-<p>5 users were asked to view the website on their mobile devices and/or tablets to provide any feedback on errors or page overlapping issues.</p>
-<br>
-<table>
-<tr>
-    <th>Test</th>
-    <th>Result</th>
-  </tr>
-   <tr>
-    <td>Issues reported</td>
-    <td>None</td>
+    <td>Is the program able to update worksheet with calculated averages at the bottom row?</td>
+    <td>Pass</td>
   </tr>
 </table>
 <br>
@@ -148,34 +111,7 @@
 <h3>Bugs</h3>
 <p>Solved bugs</p>
 <ul>
-<li>After deployment, my logo won't stop wrapping on mobile screens of width of 315px and below. I created a new media query for screens of max-width 315px and below to debug the problem</li>
-<li>Navbar items kept wrapping on tablet screens even after i reduced it's font size. I debuged it using the code - whitespace : nowrap; - on the media query of tablets</li>
-<li>Reserve forms could be submitted with no values using the space key. I debuged the issue using the code - pattern="[A-Za-z0-9]{1,20}"</li>
-</ul>
-<br>
-
-<h3>Validator Testing</h3>
-<ul>
-<li><p>HTML</p>
-<ul>
-<li>The W3C validator-detected errors were corrected.</li>
-<li>No errors were returned when re-ran on W3C validator after correction was effected.</li>
-</ul>
-</li>
-
-<li><p>CSS</p>
-<ul>
-<li>No errors were returned when css style sheet was run on the official (Jigsaw) validator.</li>
-</ul>
-</li>
-
-<li><p>Accessibility</p>
-<ul>
-<li>I confirmed that the colors and fonts chosen are easy to read and accessible by running it through lighhouse in devtools.</li>
-<img src="docs/readme.images/testing.images/jpeg-optimizer_Lighthouse.PNG" alt="Screen shot of 'lighthouse accessibility diagnosis' of Sirjays Car Rental project">
-</ul>
-</li>
-
+<li>Users' data values kept overriding the title row of the worksheet until I introduced this code: scores_worksheet.insert_row([int(num) for num in data], 2) before the bug could be fixed.</li>
 </ul>
 <br>
 
@@ -184,30 +120,33 @@
 <br>
 
 <h3>Deployment</h3>
-<p>The site was deployed to GitHub pages using the following steps:</p>
+<p>The project was deployed to Heroku platform using the following steps:</p>
 <ul>
-<li>Go to the settings tab of GitHub repository page</li>
-<li>On the left-hand sidebar in the code and automation section, select pages</li>
-<li>Set 'Source' to 'Deploy from Branch', select 'Main branch', set 'Folder' to 'Root', then click save</li>
-<li>Click the 'Code<>' tab and wait a few minutes and then refresh repository</li>
-<li>Go to the 'Environments' section on the right-hand side and click on 'github-pages'</li>
-<li>Click on the URL displayed to see the live deployed site</li>
+<li>Go to Heroku welcome/dashboard page</li>
+<li>Click "Create new app"</li>
+<li>Fill out the form that pops up with a unique "App name" and select your region -"Europe"</li>
+<li>Click "Create app"</li>
+<li>On the next page that pops up, click on "Settings"</li>
+<li>Scroll down to "Config Vars" and click on "Reveal Config Vars"</li>
+<li>In the field for KEY, enter "CREDS"</li>
+<li>Go to workspace and copy entire "creds.json" file and paste into the field for VALUE next to KEY</li>
+<li>Click on "Add buildpack"</li>
+<li>Select "python" and click "save changes"</li>
+<li>Click again on "Add buildpack" and select "node.js" followed by "save changes"</li>
+<li>On top of the page, click "Deploy" to select a deployment method </li>
+<li>Select GitHub</li>
+<li>Click "Connect to GitHub"</li>
+<li>Search for GitHub repo name, click "search" and then "connect"</li>
+<li>Scroll down and select which deployment option you prefer and "DEPLOY"!</li>
 </ul>
-<p>The live link can be found here - https://sirjay009.github.io/Sirjays-Car-Rentals/index.html</p>
-<br>
+
 <h3>Credits</h3>
 <p>Credit</p>
 <ul>
-<li>The favicon link code was taken from https://www.w3schools.com</li>
-<li>The navbar link code was taken from the CI love Running Project - https://sirjay009.github.io/love-running/</li>
-<li>The code to debug navbar items that kept wrapping on tablet screen was taken from https://css-tricks.com</li>
-<li>The code to debug contact/reserve form from accepting empty values was taken from https://stackoverflow.com</li>
-<li>The code to make the reserve button in hero's overlay was taken from Alan Bushell's Belfast Auto Repairs project - https://alan-bushell.github.io/belfast-auto-repairs/index.html</li>
-<li>The code to create space between text and font icons and debug footer was taken from https://wwwshecodes.io</li>
-<li>The code to make the social media links was taken from both the CI Love Running Project and Alan Bushell's Belfast Auto Repairs project</li>
-<li>Pieces of code for the general styling of the project was also taken from https://www.w3schools.com , https://www.codedamn.com , https://www.keentodesign.com and https://www.youtube.com/channel/UCvCyHScz5b1atuGYOQG_W8g</li>
+<li>The Code Institute Love Sandwiches Project code was lifted mostly and used to accomplish this project.</li>
+<li>Pieces of code for the project was also taken from numerous youtube channels, https://stackoverflow.com/ and also from the slack network.</li>
 </ul>
 <br>
 <h3>Acknowledgments</h3>
-<h4>Alan Bushell</h4>
+<h4>Rory Patrick Sheridan</h4>
 <p>My mentor under whose tutelage i was able to overcome my anxiety and conclude this project. I also appreciate his immense assistance in pointing me to most materials i utilized for this project.</p>

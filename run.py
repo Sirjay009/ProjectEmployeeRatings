@@ -73,7 +73,7 @@ def validate_data(values):
 def update_worksheet_with_employee_ratings(data):
     """
     Update employee_survey_data worksheet, add new row with
-    the list data provided.
+    the data provided.
     """
     print("Updating employee_survery_data worksheet...\n")
     scores_worksheet = SHEET.worksheet("employee_survey_data")
