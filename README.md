@@ -1,32 +1,17 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>Project Employee Ratings</h1>
 
-Welcome,
+<img src="docs/readme.images/Capture.PNG" alt="A screen shot of a google spreadsheet on employee ratings">
+<br>
+<br>
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
-
-## Reminders
-
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+<p>Project Employee Ratings is a Python backend data automation project that calculates a company's average ratings on three job contentment topics namely; Environment Satisfaction, Job Satisfaction and Work-Life Balance. The program utilizes a google spreadsheet to collate rating data on these three topics from employees, and then use the sum of each of these collated ratings data, to determine their averages. The intent and essence of this project is to give the company a way to know at all times, in which area(s) she lags behind and seek ways to address it/them.</p>
+<h3>User</h3>
+<ul>
+<li>As a user, i want to be able to participate in the employee survey being conducted by my company and provide my ratings data.</li>
+</ul>
+<h3>Business Owner</h3>
+<ul>
+<li>As a business owner, i want to be able to give my employeess the opportunity to anonymously rate their job contentment.</li>
+<li>As a business owner, i want to be able to pinpoint at all times, area(s) for improvement for purposes of building a work environment where employees feel fulfilled.</li>
+</ul>
+<br>
