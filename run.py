@@ -1,3 +1,9 @@
+"""
+This program calculates the averages of three
+subject matters of a employee survey namely; Environmental
+Satisfaction, Job Satisfactiona and Work-Life
+Balance.
+"""
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -11,10 +17,6 @@ CREDS = Credentials.from_service_account_file("creds.json")
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("employee_ratings")
-
-# scores = SHEET.worksheet("employee_survey_data")
-# data = scores.get_all_values()
-# print(data)
 
 
 def get_scores_data():
