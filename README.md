@@ -64,11 +64,11 @@
 </ul>
 <br>
 
-<h3>Testing</h3>
+<h2>Testing</h2>
 <p>I manually tested this program to determine it's usability and intuitivity to users by self.</p>
 <br>
 
-<h5>Testing for data input</h5>
+<h3>Testing for data input</h3>
 <table>
 <tr>
     <th>Test</th>
@@ -85,7 +85,7 @@
 </table>
 <br>
 
-<h5>Testing for data validation</h5>
+<h3>Testing for data validation</h3>
 <table>
 <tr>
     <th>Test</th>
@@ -106,7 +106,7 @@
 </table>
 <br>
 
-<h5>Testing for data parsing and analysis</h5>
+<h3>Testing for data parsing and analysis</h3>
 <table>
 <tr>
     <th>Test</th>
@@ -127,7 +127,20 @@
 </table>
 <br>
 
-<h3>Bugs</h3>
+<h3>Validator Testing</h3>
+<table>
+<tr>
+    <th>Test</th>
+    <th>Outcome</th>
+  </tr>
+   <tr>
+    <td>autopep8</td>
+    <td>Pass</td>
+  </tr>
+</table>
+<br>
+
+<h2>Bugs</h2>
 <p>Solved bugs</p>
 <ul>
 <li>Users' data values kept overriding the title row of the worksheet until I introduced this code: scores_worksheet.insert_row([int(num) for num in data], 2) before the bug could be fixed.</li>
@@ -138,7 +151,7 @@
 <p>No unfixed bugs</p>
 <br>
 
-<h3>Deployment</h3>
+<h2>Deployment</h2>
 <p>The project was deployed to Heroku platform using the following steps:</p>
 <ul>
 <li>Go to Heroku welcome/dashboard page</li>
@@ -159,13 +172,13 @@
 <li>Scroll down and select which deployment option you prefer and "DEPLOY"!</li>
 </ul>
 
-<h3>Credits</h3>
+<h2>Credits</h2>
 <p>Credit</p>
 <ul>
 <li>The Code Institute Love Sandwiches Project code was lifted mostly and used to accomplish this project.</li>
 <li>Pieces of code for the project was also taken from numerous youtube channels, https://stackoverflow.com/ and also from the slack network.</li>
 </ul>
 <br>
-<h3>Acknowledgments</h3>
+<h2>Acknowledgments</h2>
 <h4>Rory Patrick Sheridan</h4>
 <p>My mentor under whose tutelage i was able to overcome my anxiety and conclude this project. I also appreciate his immense assistance in pointing me to most materials i utilized for this project.</p>
