@@ -1,6 +1,6 @@
 <h1>Project Employee Ratings</h1>
 
-<img src="docs/readme.images/Capture.PNG" alt="A screen shot of a google spreadsheet on employee ratings">
+<img src="docs/readme.images/Capture.PNG5.PNG" alt="A screen shot from amiresponsive.com of project">
 <br>
 <br>
 
@@ -20,21 +20,40 @@
 <p>In achieving the aforementioned project goals, i incorporated the underlisted features.</p>
 
 <h3>Import Structured Data File</h3>
+
+<img src="docs/readme.images/Capture.PNG7.PNG" alt="A screen shot of imported google spreadsheet from kaggle.com">
+<br>
+<br>
 <ul>
 <li>I utilized a csv data set imported from https://www.kaggle.com/ .</li>
 <li>To interface with these imported csv data file, I activated firstly, my API Credentials and installed afterwards, two additional dependencies namely; gspread and google-auth.</li>
 </ul>
 <br>
 
-<h3>Parse and Analyse the Data</h3>
+<h3>Parse Users Ratings Data</h3>
+<img src="docs/readme.images/Capture.PNG3.PNG" alt="A screen shot of project's live version that verifies parsing of users' rating data">
+<br>
+<br>
 <ul>
-<li>I utilized four (4) functions to achieve this goal. The first collects data from users, the second validates the collected data, the third extracts/gets inputted data from each subject column and the last function calculates and updates the columns with the calculated averages.</li>
+<li>I created a get_scores_data() function with which i used to achieve this aim. I am also using the get_and_convert_column_to_integers() function to retrieve data in each of the columns to be used for the calculation of their averages.</li>
+</ul>
+<br>
+
+<h3>Analyse Users Ratings Data</h3>
+<img src="docs/readme.images/Capture.PNG4.PNG" alt="A screen shot of project's live version that verifies the analysis of inputted ratings data">
+<br>
+<br>
+<ul>
+<li>I created a validate_data() function with which i used to validate users' inputted ratings data. I also created a - calculate_and_update_average_score_ratings() function - which i have used to calculate the averages of the survey's subjects.</li>
 </ul>
 <br>
 
 <h3>Export Results to Appropriate file</h3>
+<img src="docs/readme.images/Capture.PNG" alt="A screen shot of project's live version that verifies exporting of ratings data to respective rows">
+<br>
+<br>
 <ul>
-<li>The update_worksheet_with_employee_ratings function specifically achieves this goal. It exports and updates relevant columns of the spreadsheet with the calculated averages.</li>
+<li>I created a update_worksheet_with_employee_ratings() function which together with the calculate_and_update_average_score_ratings() function, export user ratings data and calculated averages to their respective columns in the spreadsheet.</li>
 </ul>
 <br>
 
