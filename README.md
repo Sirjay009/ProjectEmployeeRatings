@@ -11,7 +11,7 @@
 </ul>
 <h3>Site Owner</h3>
 <ul>
-<li>As a site owner, i want to be able to give external users the opportunity to provide data for the survey.</li>
+<li>As a site owner, i want to be able to give external users the opportunity to provide the needed data for the computation of averages.</li>
 <li>As a site owner, i want to be able to pinpoint at all times, area(s) for improvement for purposes of building a work environment where employees feel fulfilled.</li>
 </ul>
 <br>
@@ -26,7 +26,7 @@
 <br>
 <ul>
 <li>I utilized a csv data set imported from https://www.kaggle.com/ .</li>
-<li>To interface with these imported csv data file, I activated firstly, my API Credentials and installed afterwards, two additional dependencies namely; gspread and google-auth.</li>
+<li>To interface with these imported csv data file, i activated firstly, my API Credentials and installed afterwards, two additional dependencies namely; gspread and google-auth.</li>
 </ul>
 <br>
 
@@ -35,7 +35,7 @@
 <br>
 <br>
 <ul>
-<li>I created a get_scores_data() function with which i used to achieve this aim. I am also using the get_and_convert_column_to_integers() function to retrieve data in each of the columns to be used for the calculation of their averages.</li>
+<li>I created a get_scores_data() function with which i used to achieve this aim. I am also using the get_and_convert_column_to_integers() function to retrieve data from each of the columns to be used for the calculation of their averages.</li>
 </ul>
 <br>
 
@@ -53,7 +53,7 @@
 <br>
 <br>
 <ul>
-<li>I created a update_worksheet_with_employee_ratings() function which together with the calculate_and_update_average_score_ratings() function, export user ratings data and calculated averages to their respective columns in the spreadsheet.</li>
+<li>I created a update_worksheet_with_employee_ratings() function which together with the calculate_and_update_average_score_ratings() function, export user ratings data and calculated averages to their respective columns (second and last) in the spreadsheet.</li>
 </ul>
 <br>
 
@@ -151,12 +151,12 @@
 <h2>Bugs</h2>
 <p>Solved bugs</p>
 <ul>
-<li>Users' data values kept overriding the title row of the worksheet until I introduced this code: scores_worksheet.insert_row([int(num) for num in data], 2) before the bug could be fixed.</li>
+<li>Users' data values kept overriding the title row of the worksheet until i introduced this code: scores_worksheet.insert_row([int(num) for num in data], 2) before the bug could be fixed.</li>
 </ul>
 <br>
 
 <h3>Unfixed Bugs</h3>
-<p>No unfixed bugs</p>
+<p>No bugs remaining</p>
 <br>
 
 <h2>Deployment</h2>
