@@ -57,6 +57,14 @@
 </ul>
 <br>
 
+<h3>Future Features</h3>
+<ul>
+<li>Allow users edit inputted values</li>
+<li>Allow users completely delete inputted values</li>
+</ul>
+<br>
+
+
 <h2>Technology Used</h2>
 <P><strong>Python</strong></P>
 <ul>
